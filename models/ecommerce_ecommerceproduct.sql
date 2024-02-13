@@ -20,7 +20,7 @@ SELECT
     "{{ var("table_prefix") }}_products".id as external_id,
     "{{ var("table_prefix") }}_products".title as name,
     "{{ var("table_prefix") }}_products".body_html as description,
-    "{{ var("table_prefix") }}_products".tags short_description ,
+    "{{ var("table_prefix") }}_products".tags as short_description ,
     "{{ var("table_prefix") }}_products_variants".barcode as reference,
     "{{ var("table_prefix") }}_products".product_type as type ,
     NULL as url ,
