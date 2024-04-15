@@ -12,9 +12,9 @@ SELECT
         "{{ var("table_prefix") }}_collects".id ||
         "{{ var("table_prefix") }}_collects".id ||
         'productcategory' ||
-        'shopify'
+        'wix'
     )  as id,
-    'shopify' as source,
+    'wix' as source,
     '{{ var("integration_id") }}'::uuid  as integration_id,
     NULL::jsonb as last_raw_data, 
     '{{ var("timestamp") }}' as sync_timestamp,
@@ -23,12 +23,12 @@ SELECT
         '{{ var("integration_id") }}' ||
         "{{ var("table_prefix") }}_collects".id ||
         'product' ||
-        'shopify'
+        'wix'
     ) as product_id,
     md5(
         '{{ var("integration_id") }}' ||
         "{{ var("table_prefix") }}_collects".id ||
         'category' ||
-        'shopify'
+        'wix'
     ) as category_id
 FROM "{{ var("table_prefix") }}_collects"

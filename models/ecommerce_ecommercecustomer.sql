@@ -11,13 +11,13 @@ SELECT
       '{{ var("integration_id") }}' ||
       "{{ var("table_prefix") }}_customers".id ||
       'customer' ||
-      'shopify'
+      'wix'
     )  as id,
-    'shopify' as source,
+    'wix' as source,
     '{{ var("integration_id") }}'::uuid  as integration_id,
     _airbyte_raw_{{ var("table_prefix") }}_customers._airbyte_data as last_raw_data, 
     '{{ var("timestamp") }}' as sync_timestamp,
-     "{{ var("table_prefix") }}_customers".id as external_id,
+    "{{ var("table_prefix") }}_customers".id as external_id,
     "{{ var("table_prefix") }}_customers".first_name as firstname,
     "{{ var("table_prefix") }}_customers".last_name as lastname,
     NULL as username,

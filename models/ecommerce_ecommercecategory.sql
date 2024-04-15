@@ -3,6 +3,7 @@
     unique_key='id',
     incremental_strategy='delete+insert',
 )}}
+
 SELECT 
     NOW() as created,
     NOW() as modified,
@@ -10,9 +11,9 @@ SELECT
       '{{ var("integration_id") }}' ||
       "{{ var("table_prefix") }}_collections".id ||
       'category' ||
-      'shopify'
+      'wix'
     )  as id,
-    'shopify' as source,
+    'wix' as source,
     '{{ var("integration_id") }}'::uuid  as integration_id,
     _airbyte_raw_{{ var("table_prefix") }}_collections._airbyte_data as last_raw_data, 
     '{{ var("timestamp") }}' as sync_timestamp,

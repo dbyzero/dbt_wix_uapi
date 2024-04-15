@@ -11,19 +11,19 @@ SELECT
       '{{ var("integration_id") }}' ||
       "{{ var("table_prefix") }}_orders".id ||
       'order' ||
-      'shopify'
+      'wix'
     )  as id,
-    'shopify' as source,
+    'wix' as source,
     '{{ var("integration_id") }}'::uuid as integration_id,
     _airbyte_raw_{{ var("table_prefix") }}_orders._airbyte_data as last_raw_data, 
     '{{ var("timestamp") }}' as sync_timestamp,
     "{{ var("table_prefix") }}_orders".id as external_id,
-    "{{ var("table_prefix") }}_orders".reference as number,
+    "{{ var("table_prefix") }}_orders".number as reference,
     NULL as created_via,
     NULL as version,
     NULL as status,
-    NULL as currency,
-    "{{ var("table_prefix") }}_orders".total_discounts as discount_total,
+    "{{ var("table_prefix") }}_orders".currency as currency,
+    "{{ var("table_prefix") }}_orders".discount_total as discount_total,
     NULL as discount_tax,
     NULL as shipping_total,
     NULL as shipping_tax,
@@ -45,8 +45,8 @@ SELECT
     NULL::jsonb as coupon_lines,
     NULL::jsonb as refunds,
     NULL::boolean as paid,
-    "{{ var("table_prefix") }}_orders".updated_at as service_date_updated,
-    "{{ var("table_prefix") }}_orders".created_at as service_date_created,
+    "{{ var("table_prefix") }}_orders".service_date_updated as service_date_updated,
+    "{{ var("table_prefix") }}_orders".service_date_created as service_date_created,
     NULL as invoice_number,
     NULL::date as invoice_date,
     NULL as delivery_number,
