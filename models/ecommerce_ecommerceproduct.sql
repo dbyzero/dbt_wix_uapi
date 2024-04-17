@@ -51,5 +51,3 @@ SELECT
 FROM "{{ var("table_prefix") }}_products"
 LEFT JOIN _airbyte_raw_{{ var("table_prefix") }}_products
 ON _airbyte_raw_{{ var("table_prefix") }}_products._airbyte_ab_id = "{{ var("table_prefix") }}_products"._airbyte_ab_id
-LEFT JOIN {{ var("table_prefix") }}_products_variants
-ON "{{ var("table_prefix") }}_products_variants"._airbyte_{{ var("table_prefix") }}_products_hashid = "{{ var("table_prefix") }}_products"._airbyte_{{ var("table_prefix") }}_products_hashid
